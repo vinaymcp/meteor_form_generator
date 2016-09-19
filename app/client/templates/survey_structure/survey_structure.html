@@ -1,0 +1,34 @@
+<template name="SurveyStructure">
+{{> loginButtons}} 
+  <div class="survey-structure">
+    <h1>Survey Structure</h1>
+
+    {{#each structure}}
+  		 {{name}} | {{type}} | {{title}}  <a href="#" class="delete">X</a><br/>
+
+    {{/each}}
+  </div>
+    
+    <hr/>
+<form>
+   Element Name :  <input type="text" name="txtname" /> <br/>
+   Element Title:  <input type="text" name="txttitle" /> <br/>
+   Element Type :  <select name="txttype"> 
+   						<option vlaue="">Select </option>
+   						<option vlaue="text">text </option>
+   						<option vlaue="number">number </option>
+   						<option vlaue="checkbox">checkbox </option>
+   						<option vlaue="date">date </option>
+   						<option vlaue="email">email </option>
+   						<option vlaue="password">password </option>
+   						<option vlaue="searchbox">searchbox </option>
+   						<option vlaue="tel">tel </option>
+   						<option vlaue="time">time </option>
+   						<option vlaue="url">url </option>
+   						<option vlaue="file">file </option>
+   						
+                    </select> <br/>
+   <input type="submit">
+</form>
+  
+</template>

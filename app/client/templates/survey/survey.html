@@ -1,0 +1,64 @@
+<template name="Survey">
+  <div class="survey">
+    <h1>Welcome to survey</h1>
+
+	<form>
+	    {{#each SurveyStructure}}
+
+	    	{{emailtype}}
+	    	{{#if texttype}}
+	    	  	{{title}} <input type="text" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	 {{#if numbertype}}
+	    	  	{{title}} <input type="number" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	 {{#if emailtype}}
+	    	  	{{title}} <input type="email" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	 {{#if checkboxtype}}
+	    	  	{{title}} <input type="checkbox" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	 {{#if datetype}}
+	    	  	{{title}} <input type="date" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	 {{#if passwordtype}}
+	    	  	{{title}} <input type="password" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	 {{#if searchtype}}
+	    	  	{{title}} <input type="search" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	 {{#if teltype}}
+	    	  	{{title}} <input type="tel" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	 {{#if timetype}}
+	    	  	{{title}} <input type="time" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	 {{#if urltype}}
+	    	  	{{title}} <input type="url" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+	    	  {{#if filetype}}
+	    	  	{{title}} <input type="file" name="{{name}}" /> <br/>
+	    	 {{/if}} 
+
+	    	 
+
+	    {{/each}}
+	    <input type="submit">
+    </form>
+    <a href="#" class="buttonDownload"> Download CSV </a>
+     {{#each allsurveys}}
+
+    	{{#each surveydetails}}
+
+	    	{{#if isid }}
+	    	   {{key}} :  {{value}}
+	    	{{/if}}
+
+
+     	{{/each}}
+     		<br/>
+    {{/each}}
+  </div>
+    
+   
+</template>
